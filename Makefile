@@ -1,5 +1,6 @@
 install:
-	pip install -r requirements.txt
+	python3 -m venv venv
+	. venv/bin/activate && pip install -r requirements.txt
 
 run:
-	python app.py
+	. venv/bin/activate && export FLASK_APP=app.py && flask run --host=0.0.0.0 --port=3000
